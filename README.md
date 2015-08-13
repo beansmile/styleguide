@@ -1,0 +1,2 @@
+# styleguide
+Styleguide for beansmile
