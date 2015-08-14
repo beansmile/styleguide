@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>响应式 | Beansmile CSS 编码规范</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.2.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter7/index.html" />
+    
+    
+    <link rel="prev" href="../chapter5/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="6" data-basepath=".." data-revision="Fri Aug 14 2015 10:54:49 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        代码风格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        通用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        值与单位
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        字体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        变化与动画
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        响应式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        兼容性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter8/index.html">
+            
+                
+                    <a href="../chapter8/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        参考文献
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Beansmile CSS 编码规范</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="6-%E5%93%8D%E5%BA%94%E5%BC%8F">6 &#x54CD;&#x5E94;&#x5F0F;</h2>
+<h4 id="-%E5%BC%BA%E5%88%B6-media-query-%E4%B8%8D%E5%BE%97%E5%8D%95%E7%8B%AC%E7%BC%96%E6%8E%92%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%9A%84%E8%A7%84%E5%88%99%E4%B8%80%E8%B5%B7%E5%AE%9A%E4%B9%89%E3%80%82">[&#x5F3A;&#x5236;] <code>Media Query</code> &#x4E0D;&#x5F97;&#x5355;&#x72EC;&#x7F16;&#x6392;&#xFF0C;&#x5FC5;&#x987B;&#x4E0E;&#x76F8;&#x5173;&#x7684;&#x89C4;&#x5219;&#x4E00;&#x8D77;&#x5B9A;&#x4E49;&#x3002;</h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-comment">/* Good */</span>
+<span class="hljs-comment">/* header styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* header styles */</span>
+}
+
+<span class="hljs-comment">/* main styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* main styles */</span>
+}
+
+<span class="hljs-comment">/* footer styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* footer styles */</span>
+}
+
+
+<span class="hljs-comment">/* Bad */</span>
+<span class="hljs-comment">/* header styles */</span>
+<span class="hljs-comment">/* main styles */</span>
+<span class="hljs-comment">/* footer styles */</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* header styles */</span>
+  <span class="hljs-comment">/* main styles */</span>
+  <span class="hljs-comment">/* footer styles */</span>
+}
+</code></pre>
+<h4 id="-%E5%BC%BA%E5%88%B6-media-query-%E5%A6%82%E6%9E%9C%E6%9C%89%E5%A4%9A%E4%B8%AA%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%97%B6%EF%BC%8C%E5%BA%94%E5%B0%86%E6%AF%8F%E4%B8%AA%E6%9D%A1%E4%BB%B6%E6%94%BE%E5%9C%A8%E5%8D%95%E7%8B%AC%E4%B8%80%E8%A1%8C%E4%B8%AD%E3%80%82">[&#x5F3A;&#x5236;] <code>Media Query</code> &#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x5E94;&#x5C06;&#x6BCF;&#x4E2A;&#x6761;&#x4EF6;&#x653E;&#x5728;&#x5355;&#x72EC;&#x4E00;&#x884C;&#x4E2D;&#x3002;</h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-at_rule">@<span class="hljs-keyword">media</span>
+(-webkit-min-device-pixel-ratio: <span class="hljs-number">2</span>), /* Webkit-based browsers */
+(min--moz-device-pixel-ratio: <span class="hljs-number">2</span>),    /* Older Firefox browsers (prior to Firefox <span class="hljs-number">16</span>) */
+(min-resolution: <span class="hljs-number">2dppx</span>),             /* The standard way */
+(min-resolution: <span class="hljs-number">192dpi</span>) </span>{           <span class="hljs-comment">/* dppx fallback */</span>
+  <span class="hljs-comment">/* Retina-specific stuff here */</span>
+}
+</code></pre>
+<h4 id="-%E5%BB%BA%E8%AE%AE-%E5%B0%BD%E5%8F%AF%E8%83%BD%E7%BB%99%E5%87%BA%E5%9C%A8%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E8%AE%BE%E5%A4%87-retina-%E4%B8%8B%E6%95%88%E6%9E%9C%E6%9B%B4%E4%BD%B3%E7%9A%84%E6%A0%B7%E5%BC%8F%E3%80%82">[&#x5EFA;&#x8BAE;] &#x5C3D;&#x53EF;&#x80FD;&#x7ED9;&#x51FA;&#x5728;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x8BBE;&#x5907; (Retina) &#x4E0B;&#x6548;&#x679C;&#x66F4;&#x4F73;&#x7684;&#x6837;&#x5F0F;&#x3002;</h4>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 变化与动画"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter7/index.html" class="navigation navigation-next " aria-label="Next page: 兼容性"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

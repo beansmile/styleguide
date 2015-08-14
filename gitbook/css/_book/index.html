@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Introduction | Beansmile CSS 编码规范</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="本文档是针对CSS设计的，但是使用Sass的时候，大部分规范也同样适用。本文档的目的是希望团队的CSS代码风格一致，方便他人理解和维护。">
+        <meta name="generator" content="GitBook 2.2.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./chapter1/index.html" />
+    
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="0" data-basepath="." data-revision="Fri Aug 14 2015 10:54:49 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter active" data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="./chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        代码风格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="./chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        通用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="./chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        值与单位
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="./chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        字体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="./chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        变化与动画
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="./chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        响应式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="./chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        兼容性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter8/index.html">
+            
+                
+                    <a href="./chapter8/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        参考文献
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Beansmile CSS 编码规范</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="beansmile-css-%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83">Beansmile CSS &#x7F16;&#x7801;&#x89C4;&#x8303;</h2>
+<p>&#x672C;&#x6587;&#x6863;&#x662F;&#x9488;&#x5BF9;CSS&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;Sass&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x89C4;&#x8303;&#x4E5F;&#x540C;&#x6837;&#x9002;&#x7528;&#x3002;
+&#x672C;&#x6587;&#x6863;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5E0C;&#x671B;&#x56E2;&#x961F;&#x7684;CSS&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x4E00;&#x81F4;&#xFF0C;&#x65B9;&#x4FBF;&#x4ED6;&#x4EBA;&#x7406;&#x89E3;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
+<h4 id="%E6%B3%A8%EF%BC%9A%E8%A7%84%E8%8C%83%E4%B8%AD%E7%9A%84%E9%81%B5%E5%AE%88%E8%A6%81%E6%B1%82%E7%BA%A7%E5%88%AB%E5%A6%82%E4%B8%8B%EF%BC%9A">&#x6CE8;&#xFF1A;&#x89C4;&#x8303;&#x4E2D;&#x7684;&#x9075;&#x5B88;&#x8981;&#x6C42;&#x7EA7;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</h4>
+<ul>
+<li>&#x6807;&#x660E; [&#x5F3A;&#x5236;] &#x7684;&#x6761;&#x76EE;&#x5FC5;&#x987B;&#x9075;&#x5B88;</li>
+<li>&#x6807;&#x660E; [&#x5EFA;&#x8BAE;] &#x7684;&#x6761;&#x76EE;&#x5982;&#x65E0;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;&#x4F18;&#x5148;&#x9075;&#x5B88;</li>
+</ul>
+<p>&#x672C;&#x6587;&#x6863;&#x7531;Clark&#x6574;&#x7406;&#xFF0C;Bruce&#xFF0C;Rain&#x4FEE;&#x6B63;&#x5BA1;&#x6838;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <a href="./chapter1/index.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 代码风格"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
