@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="4.6" data-basepath=".." data-revision="Wed Aug 19 2015 13:20:42 GMT+0800 (CST)">
+    <div class="book" data-level="4.6" data-basepath=".." data-revision="Wed Aug 19 2015 13:56:11 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -775,6 +775,21 @@
             
         </li>
     
+        <li class="chapter " data-level="4.14" data-path="ruby-section15/index.html">
+            
+                
+                    <a href="../ruby-section15/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        参考文献
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -901,6 +916,189 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="%E5%BC%82%E5%B8%B8">&#x5F02;&#x5E38;</h1>
+<ul>
+<li><p>&#x5355;&#x4E2A;&#x5F02;&#x5E38;&#x4F7F;&#x7528; <code>fail</code> &#x5173;&#x952E;&#x5B57;&#x4EC5;&#x4EC5;&#x5F53;&#x6355;&#x83B7;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x5E76;&#x4E14;&#x53CD;&#x590D;&#x629B;&#x51FA;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;(&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x4F60;&#x4E0D;&#x662F;&#x5931;&#x8D25;&#xFF0C;&#x800C;&#x662F;&#x51C6;&#x786E;&#x7684;&#x5E76;&#x4E14;&#x6545;&#x610F;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;)&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-keyword">begin</span>
+    fail <span class="hljs-string">&apos;Oops&apos;</span>
+  <span class="hljs-keyword">rescue</span> =&gt; error
+    raise <span class="hljs-keyword">if</span> error.message != <span class="hljs-string">&apos;Oops&apos;</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x4E3A; <code>fail/raise</code> &#x6307;&#x5B9A;&#x51C6;&#x786E;&#x7684; <code>RuntimeError</code>&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  fail <span class="hljs-constant">RuntimeError</span>, <span class="hljs-string">&apos;message&apos;</span>
+
+  <span class="hljs-comment"># good - signals a RuntimeError by default</span>
+  fail <span class="hljs-string">&apos;message&apos;</span>
+</code></pre>
+</li>
+<li><p>&#x5B81;&#x613F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x7C7B;&#x548C;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x4F5C;&#x4E3A; <code>fail/raise</code> &#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x5B9E;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  fail <span class="hljs-constant">SomeException</span>.new(<span class="hljs-string">&apos;message&apos;</span>)
+  <span class="hljs-comment"># Note that there is no way to do `fail SomeException.new(&apos;message&apos;), backtrace`.</span>
+
+  <span class="hljs-comment"># good</span>
+  fail <span class="hljs-constant">SomeException</span>, <span class="hljs-string">&apos;message&apos;</span>
+  <span class="hljs-comment"># Consistent with `fail SomeException, &apos;message&apos;, backtrace`.</span>
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x5728; <code>ensure</code> &#x5757;&#x4E2D;&#x8FD4;&#x56DE;&#x3002;&#x5982;&#x679C;&#x4F60;&#x660E;&#x786E;&#x7684;&#x4ECE; <code>ensure</code> &#x5757;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD4;&#x56DE;&#x5C06;&#x4F1A;&#x4F18;&#x4E8E;&#x4EFB;&#x4F55;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x7BA1;&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#x629B;&#x51FA;&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x5F02;&#x5E38;&#x5C06;&#x4F1A;&#x9759;&#x9759;&#x7684;&#x6E9C;&#x8D70;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>foo
+    <span class="hljs-keyword">begin</span>
+      fail
+    <span class="hljs-keyword">ensure</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;very bad idea&apos;</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>Use <strong>implicit begin blocks</strong> when possible.&#x5982;&#x679C;&#x53EF;&#x80FD;&#x4F7F;&#x7528;<strong>&#x9690;&#x5F0F; <code>begin</code> &#x4EE3;&#x7801;&#x5757;</strong>&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>foo
+    <span class="hljs-keyword">begin</span>
+      <span class="hljs-comment"># main logic goes here</span>
+    <span class="hljs-keyword">rescue</span>
+      <span class="hljs-comment"># failure handling goes here</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>foo
+    <span class="hljs-comment"># main logic goes here</span>
+  <span class="hljs-keyword">rescue</span>
+    <span class="hljs-comment"># failure handling goes here</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x901A;&#x8FC7; <em>contingency methods</em> &#x5076;&#x7136;&#x6027;&#x65B9;&#x6CD5;&#x3002; (&#x4E00;&#x4E2A;&#x7531; Avdi Grimm &#x521B;&#x9020;&#x7684;&#x8BCD;) &#x6765;&#x51CF;&#x5C11; <code>begin</code> &#x533A;&#x5757;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-keyword">begin</span>
+    something_that_might_fail
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">IOError</span>
+    <span class="hljs-comment"># handle IOError</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">begin</span>
+    something_else_that_might_fail
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">IOError</span>
+    <span class="hljs-comment"># handle IOError</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>with_io_error_handling
+     <span class="hljs-keyword">yield</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">IOError</span>
+    <span class="hljs-comment"># handle IOError</span>
+  <span class="hljs-keyword">end</span>
+
+  with_io_error_handling { something_that_might_fail }
+
+  with_io_error_handling { something_else_that_might_fail }
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x6291;&#x5236;&#x5F02;&#x5E38;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># an exception occurs here</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">SomeError</span>
+    <span class="hljs-comment"># the rescue clause does absolutely nothing</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># bad</span>
+  do_something <span class="hljs-keyword">rescue</span> <span class="hljs-keyword">nil</span>
+</code></pre>
+</li>
+<li><p>&#x907F;&#x514D;&#x4F7F;&#x7528; <code>rescue</code> &#x7684;&#x4FEE;&#x9970;&#x7B26;&#x5F62;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad - this catches exceptions of StandardError class and its descendant classes</span>
+  read_file <span class="hljs-keyword">rescue</span> handle_error(<span class="hljs-variable">$!</span>)
+
+  <span class="hljs-comment"># good - this catches only the exceptions of Errno::ENOENT class and its descendant classes</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>foo
+    read_file
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">Errno::ENOENT</span> =&gt; ex
+    handle_error(ex)
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x7528;&#x5F02;&#x5E38;&#x6765;&#x63A7;&#x5236;&#x6D41;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-keyword">begin</span>
+    n / d
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">ZeroDivisionError</span>
+    puts <span class="hljs-string">&quot;Cannot divide by 0!&quot;</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-keyword">if</span> d.zero?
+    puts <span class="hljs-string">&quot;Cannot divide by 0!&quot;</span>
+  <span class="hljs-keyword">else</span>
+    n / d
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x5E94;&#x8BE5;&#x603B;&#x662F;&#x907F;&#x514D;&#x62E6;&#x622A;(&#x6700;&#x9876;&#x7EA7;&#x7684;) <code>Exception</code> &#x5F02;&#x5E38;&#x7C7B;&#x3002;&#x8FD9;&#x91CC;(ruby&#x81EA;&#x8EAB;)&#x5C06;&#x4F1A;&#x6355;&#x83B7;&#x4FE1;&#x53F7;&#x5E76;&#x4E14;&#x8C03;&#x7528; <code>exit</code>&#xFF0C;&#x9700;&#x8981;&#x4F60;&#x4F7F;&#x7528; <code>kill -9</code> &#x6740;&#x6389;&#x8FDB;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># calls to exit and kill signals will be caught (except kill -9)</span>
+    exit
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">Exception</span>
+    puts <span class="hljs-string">&quot;you didn&apos;t really want to exit, right?&quot;</span>
+    <span class="hljs-comment"># exception handling</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># a blind rescue rescues from StandardError, not Exception as many</span>
+    <span class="hljs-comment"># programmers assume.</span>
+  <span class="hljs-keyword">rescue</span> =&gt; e
+    <span class="hljs-comment"># exception handling</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># also good</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># an exception occurs here</span>
+
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">StandardError</span> =&gt; e
+    <span class="hljs-comment"># exception handling</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x66F4;&#x5177;&#x4F53;&#x7684;&#x5F02;&#x5E38;&#x653E;&#x5728;&#x6551;&#x63F4;&#xFF08;rescue&#xFF09;&#x94FE;&#x7684;&#x4E0A;&#x65B9;&#xFF0C;&#x5426;&#x5219;&#x4ED6;&#x4EEC;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x6551;&#x63F4;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># some code</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">Exception</span> =&gt; e
+    <span class="hljs-comment"># some handling</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">StandardError</span> =&gt; e
+    <span class="hljs-comment"># some handling</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># some code</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">StandardError</span> =&gt; e
+    <span class="hljs-comment"># some handling</span>
+  <span class="hljs-keyword">rescue</span> <span class="hljs-constant">Exception</span> =&gt; e
+    <span class="hljs-comment"># some handling</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+<li><p>&#x5728; <code>ensure</code> &#x533A;&#x5757;&#x4E2D;&#x91CA;&#x653E;&#x4F60;&#x7A0B;&#x5F0F;&#x83B7;&#x5F97;&#x7684;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x3002;</p>
+<pre><code class="lang-Ruby">  f = <span class="hljs-constant">File</span>.open(<span class="hljs-string">&apos;testfile&apos;</span>)
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment"># .. process</span>
+  <span class="hljs-keyword">rescue</span>
+    <span class="hljs-comment"># .. handle error</span>
+  <span class="hljs-keyword">ensure</span>
+    f.close <span class="hljs-keyword">unless</span> f.<span class="hljs-keyword">nil</span>?
+  <span class="hljs-keyword">end</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>&#x9664;&#x975E;&#x5FC5;&#x8981;, &#x5C3D;&#x53EF;&#x80FD;&#x4F7F;&#x7528; Ruby &#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x5F02;&#x5E38;&#x7C7B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#x3002;(&#x800C;&#x4E0D;&#x662F;&#x6D3E;&#x751F;&#x81EA;&#x5DF1;&#x7684;&#x5F02;&#x5E38;&#x7C7B;)</li>
+</ul>
 
                     
                     </section>
