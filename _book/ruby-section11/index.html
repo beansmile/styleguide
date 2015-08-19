@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="4.10" data-basepath=".." data-revision="Wed Aug 19 2015 13:20:42 GMT+0800 (CST)">
+    <div class="book" data-level="4.10" data-basepath=".." data-revision="Wed Aug 19 2015 13:56:11 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -775,6 +775,21 @@
             
         </li>
     
+        <li class="chapter " data-level="4.14" data-path="ruby-section15/index.html">
+            
+                
+                    <a href="../ruby-section15/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        参考文献
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -901,6 +916,70 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="%E7%99%BE%E5%88%86%E5%8F%B7%E5%92%8C%E5%AD%97%E9%9D%A2%E5%80%BC">&#x767E;&#x5206;&#x53F7;&#x548C;&#x5B57;&#x9762;&#x503C;</h1>
+<ul>
+<li><p>&#x9700;&#x8981;&#x63D2;&#x503C;&#x4E0E;&#x5D4C;&#x5165;&#x53CC;&#x5F15;&#x53F7;&#x7684;&#x5355;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x7528; <code>%()</code> &#xFF08;&#x662F; <code>%Q</code> &#x7684;&#x7B80;&#x5199;&#xFF09;&#x3002;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x597D;&#x7528; heredocs &#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad (no interpolation needed)</span>
+  <span class="hljs-string">%(&lt;div class=&quot;text&quot;&gt;Some text&lt;/div&gt;)</span>
+  <span class="hljs-comment"># should be &apos;&lt;div class=&quot;text&quot;&gt;Some text&lt;/div&gt;&apos;</span>
+
+  <span class="hljs-comment"># bad (no double-quotes)</span>
+  <span class="hljs-string">%(This is <span class="hljs-subst">#{quality}</span> style)</span>
+  <span class="hljs-comment"># should be &quot;This is #{quality} style&quot;</span>
+
+  <span class="hljs-comment"># bad (multiple lines)</span>
+  <span class="hljs-string">%(&lt;div&gt;\n&lt;span class=&quot;big&quot;&gt;<span class="hljs-subst">#{exclamation}</span>&lt;/span&gt;\n&lt;/div&gt;)</span>
+  <span class="hljs-comment"># should be a heredoc.</span>
+
+  <span class="hljs-comment"># good (requires interpolation, has quotes, single line)</span>
+  <span class="hljs-string">%(&lt;tr&gt;&lt;td class=&quot;name&quot;&gt;<span class="hljs-subst">#{name}</span>&lt;/td&gt;)</span>
+</code></pre>
+</li>
+<li><p>&#x6CA1;&#x6709; <code>&apos;</code> &#x548C; <code>&quot;</code> &#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x8981;&#x4F7F;&#x7528; <code>%q</code> &#x3002;&#x9664;&#x975E;&#x8BB8;&#x591A;&#x5B57;&#x7B26;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#xFF0C;&#x5426;&#x5219;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x8BFB;&#x6027;&#x66F4;&#x597D;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  name = <span class="hljs-string">%q(Bruce Wayne)</span>
+  time = <span class="hljs-string">%q(8 o&apos;clock)</span>
+  question = <span class="hljs-string">%q(&quot;What did you say?&quot;)</span>
+
+  <span class="hljs-comment"># good</span>
+  name = <span class="hljs-string">&apos;Bruce Wayne&apos;</span>
+  time = <span class="hljs-string">&quot;8 o&apos;clock&quot;</span>
+  question = <span class="hljs-string">&apos;&quot;What did you say?&quot;&apos;</span>
+</code></pre>
+</li>
+<li><p><code>%r</code> &#x7684;&#x65B9;&#x5F0F;&#x53EA;&#x9002;&#x5408;&#x4E8E;&#x5B9A;&#x4E49;&#x5305;&#x542B;&#x591A;&#x4E2A; <code>/</code> &#x7B26;&#x53F7;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-Ruby">  # bad
+  %r(\s+)
+
+  # still bad
+  %r(^/(.*)$)
+  # should be /^\/(.*)$/
+
+  # good
+  %r(^/blog/2011/(.*)$)
+</code></pre>
+</li>
+<li><p>&#x9664;&#x975E;&#x8C03;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x53CD;&#x5F15;&#x53F7;&#xFF08;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0D;&#x5E38;&#x89C1;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x7528; <code>%x</code>&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  date = <span class="hljs-string">%x(date)</span>
+
+  <span class="hljs-comment"># good</span>
+  date = <span class="hljs-string">`date`</span>
+  echo = <span class="hljs-string">%x(echo `date`)</span>
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x7528; <code>%s</code> &#x3002;&#x793E;&#x533A;&#x503E;&#x5411;&#x4F7F;&#x7528; <code>:&quot;some string&quot;</code> &#x6765;&#x521B;&#x5EFA;&#x542B;&#x6709;&#x7A7A;&#x767D;&#x7684;&#x7B26;&#x53F7;&#x3002;</p>
+</li>
+<li><p>&#x7528; <code>%</code> &#x8868;&#x793A;&#x5B57;&#x9762;&#x91CF;&#x65F6;&#x4F7F;&#x7528; <code>()</code>&#xFF0C; <code>%r</code> &#x9664;&#x5916;&#x3002;&#x56E0;&#x4E3A;&#x5927;&#x62EC;&#x53F7;&#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E2D;&#x5728;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E2D;&#x4E0D;&#x592A;&#x901A;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x4F8B;&#x5982; <code>{</code> &#x4F5C;&#x4E3A;&#x5206;&#x5272;&#x7B26;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x6B63;&#x5219;&#x5F0F;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<pre><code class="lang-Ruby">  <span class="hljs-comment"># bad</span>
+  <span class="hljs-string">%w[one two three]</span>
+  <span class="hljs-string">%q{&quot;Test&apos;s king!&quot;, John said.}</span>
+
+  <span class="hljs-comment"># good</span>
+  <span class="hljs-string">%w(one two three)</span>
+  <span class="hljs-string">%q(&quot;Test&apos;s king!&quot;, John said.)</span>
+</code></pre>
+</li>
+</ul>
 
                     
                     </section>

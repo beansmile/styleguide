@@ -46,5 +46,6 @@
   * [元编程](ruby-section12/README.md)
   * [杂项](ruby-section13/README.md)
   * [工具](ruby-section14/README.md)
+  * [参考文献](ruby-section15/README.md)
 
 * [Rails styleguide](chapter5/README.md)
