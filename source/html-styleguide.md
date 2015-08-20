@@ -114,7 +114,10 @@ IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可
 
 解释：
 
-常见无需自闭合标签有input、br、img、hr等。
+常见无需自闭合标签有：input、br、img、hr、meta、link等。
+
+所有无需自闭合标签有：area、base, br, col, command, embed, hr, img, input, 
+keygen, link, meta, param, source, track, wbr 
 
 
 示例：
@@ -408,11 +411,11 @@ src 取值为空，会导致部分浏览器重新加载一次当前页面，参�
 
 #### [建议] 避免为 `img` 添加不必要的 `title` 属性。
 
-解释：  
+解释：
 
 多余的 title 影响图片浏览体验，并且增加了页面尺寸。
 
-#### [建议] 为重要图片添加 `alt` 属性。
+#### [建议] 为所有图片添加 `alt` 属性。
 
 解释：
 

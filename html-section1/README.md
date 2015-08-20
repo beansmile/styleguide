@@ -103,7 +103,10 @@ IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可
 
 解释：
 
-常见无需自闭合标签有input、br、img、hr等。
+常见无需自闭合标签有：input、br、img、hr、meta、link等。
+
+所有无需自闭合标签有：area、base, br, col, command, embed, hr, img, input, 
+keygen, link, meta, param, source, track, wbr 
 
 
 示例：
