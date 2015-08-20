@@ -425,3 +425,20 @@
 * 在 API 文档中使用 RDoc和它的公约。不要在注释代码块和`def`之间加入空行。
 * 保持每一行少于80字符。
 * 避免尾随空格。
+* 多个判断语句换行需缩进
+
+  ```Ruby
+  # good
+  def is_eligible?(user)
+    Trebuchet.current.launch?(ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG) &&
+      is_in_program?(user) &&
+      program_not_expired
+  end
+
+  # bad
+  def is_eligible?(user)
+    Trebuchet.current.launch?(ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG) &&
+    is_in_program?(user) &&
+    program_not_expired
+  end
+  ```

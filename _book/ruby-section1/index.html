@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="4.1" data-basepath=".." data-revision="Thu Aug 20 2015 15:34:58 GMT+0800 (CST)">
+    <div class="book" data-level="4.1" data-basepath=".." data-revision="Thu Aug 20 2015 15:36:08 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -1407,6 +1407,22 @@ windows&#x4E0B;enter&#x662F; \n\r,unix&#x4E0B;&#x662F;\n,mac&#x4E0B;&#x662F;\r</
 </li>
 <li>&#x4FDD;&#x6301;&#x6BCF;&#x4E00;&#x884C;&#x5C11;&#x4E8E;80&#x5B57;&#x7B26;&#x3002;</li>
 <li>&#x907F;&#x514D;&#x5C3E;&#x968F;&#x7A7A;&#x683C;&#x3002;</li>
+<li><p>&#x591A;&#x4E2A;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x6362;&#x884C;&#x9700;&#x7F29;&#x8FDB;</p>
+<pre><code class="lang-Ruby"><span class="hljs-comment"># good</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_eligible?(user)
+  <span class="hljs-constant">Trebuchet</span>.current.launch?(<span class="hljs-constant">ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG</span>) &amp;&amp;
+    is_in_program?(user) &amp;&amp;
+    program_not_expired
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment"># bad</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_eligible?(user)
+  <span class="hljs-constant">Trebuchet</span>.current.launch?(<span class="hljs-constant">ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG</span>) &amp;&amp;
+  is_in_program?(user) &amp;&amp;
+  program_not_expired
+<span class="hljs-keyword">end</span>
+</code></pre>
+</li>
 </ul>
 
                     
