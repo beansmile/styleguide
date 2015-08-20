@@ -1,4 +1,12 @@
 * [HTML styleguide](chapter1/README.md)
+  * [代码风格](html-section1/README.md)
+  * [通用](html-section2/README.md)
+  * [head标签](html-section3/README.md)
+  * [图片](html-section4/README.md)
+  * [表单](html-section5/README.md)
+  * [多媒体](html-section6/README.md)
+  * [模板中的HTML](html-section7/README.md)
+
 * [CSS styleguide](chapter2/README.md)
   * [代码风格](css-section1/README.md)
   * [通用](css-section2/README.md)
