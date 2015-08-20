@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.5" data-basepath=".." data-revision="Thu Aug 20 2015 12:42:27 GMT+0800 (CST)">
+    <div class="book" data-level="2.5" data-basepath=".." data-revision="Thu Aug 20 2015 13:59:25 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -1026,7 +1026,47 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="%E5%8F%98%E5%8C%96%E4%B8%8E%E5%8A%A8%E7%94%BB">&#x53D8;&#x5316;&#x4E0E;&#x52A8;&#x753B;</h1>
+                        <h1 id="%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%8A%A8%E7%94%BB">&#x53D8;&#x6362;&#x4E0E;&#x52A8;&#x753B;</h1>
+<h4 id="-%E5%BC%BA%E5%88%B6-%E4%BD%BF%E7%94%A8-transition-%E6%97%B6%E5%BA%94%E6%8C%87%E5%AE%9A-transition-property-%E3%80%82">[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; <code>transition</code> &#x65F6;&#x5E94;&#x6307;&#x5B9A; <code>transition-property</code>&#x3002;</h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-comment">/* good */</span>
+<span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> color <span class="hljs-number">1s</span>, border-color <span class="hljs-number">1s</span></span></span>;
+}</span>
+
+<span class="hljs-comment">/* bad */</span>
+<span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all <span class="hljs-number">1s</span></span></span>;
+}</span>
+</code></pre>
+<h4 id="-%E5%BB%BA%E8%AE%AE-%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%83%BD%E9%AB%98%E6%95%88%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8A%E6%B7%BB%E5%8A%A0%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB%E3%80%82">[&#x5EFA;&#x8BAE;] &#x5C3D;&#x53EF;&#x80FD;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x80FD;&#x9AD8;&#x6548;&#x5B9E;&#x73B0;&#x7684;&#x5C5E;&#x6027;&#x4E0A;&#x6DFB;&#x52A0;&#x8FC7;&#x6E21;&#x548C;&#x52A8;&#x753B;&#x3002;</h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x89C1;<a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/" target="_blank">&#x672C;&#x6587;</a>&#xFF0C;&#x5728;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x9009;&#x62E9;&#x8FD9;&#x6837;&#x56DB;&#x79CD;&#x53D8;&#x6362;&#xFF1A;</p>
+<ul>
+<li><code>transform: translate(npx, npx);</code></li>
+<li><code>transform: scale(n);</code></li>
+<li><code>transform: rotate(ndeg);</code></li>
+<li><code>opacity: 0..1;</code></li>
+</ul>
+<p>&#x5178;&#x578B;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; translate &#x6765;&#x4EE3;&#x66FF; left &#x4F5C;&#x4E3A;&#x52A8;&#x753B;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-comment">/* good */</span>
+<span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> transform <span class="hljs-number">1s</span></span></span>;
+}</span>
+<span class="hljs-rule"><span class="hljs-attribute">.box</span>:<span class="hljs-value">hover {
+  transform: <span class="hljs-function">translate</span>(<span class="hljs-number">20px</span>)</span></span>; <span class="hljs-comment">/* move right for 20px */</span>
+}
+
+<span class="hljs-comment">/* bad */</span>
+<span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> left <span class="hljs-number">1s</span></span></span>;
+}</span>
+<span class="hljs-rule"><span class="hljs-attribute">.box</span>:<span class="hljs-value">hover {
+  left: <span class="hljs-number">20px</span></span></span>; <span class="hljs-comment">/* move right for 20px */</span>
+}
+</code></pre>
 
                     
                     </section>

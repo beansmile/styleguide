@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.6" data-basepath=".." data-revision="Thu Aug 20 2015 12:42:27 GMT+0800 (CST)">
+    <div class="book" data-level="2.6" data-basepath=".." data-revision="Thu Aug 20 2015 13:59:25 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -1027,6 +1027,47 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="%E5%93%8D%E5%BA%94%E5%BC%8F">&#x54CD;&#x5E94;&#x5F0F;</h1>
+<h4 id="-%E5%BC%BA%E5%88%B6-media-query-%E4%B8%8D%E5%BE%97%E5%8D%95%E7%8B%AC%E7%BC%96%E6%8E%92%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%9A%84%E8%A7%84%E5%88%99%E4%B8%80%E8%B5%B7%E5%AE%9A%E4%B9%89%E3%80%82">[&#x5F3A;&#x5236;] <code>Media Query</code> &#x4E0D;&#x5F97;&#x5355;&#x72EC;&#x7F16;&#x6392;&#xFF0C;&#x5FC5;&#x987B;&#x4E0E;&#x76F8;&#x5173;&#x7684;&#x89C4;&#x5219;&#x4E00;&#x8D77;&#x5B9A;&#x4E49;&#x3002;</h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-comment">/* Good */</span>
+<span class="hljs-comment">/* header styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* header styles */</span>
+}
+
+<span class="hljs-comment">/* main styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* main styles */</span>
+}
+
+<span class="hljs-comment">/* footer styles */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* footer styles */</span>
+}
+
+
+<span class="hljs-comment">/* Bad */</span>
+<span class="hljs-comment">/* header styles */</span>
+<span class="hljs-comment">/* main styles */</span>
+<span class="hljs-comment">/* footer styles */</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (...) </span>{
+  <span class="hljs-comment">/* header styles */</span>
+  <span class="hljs-comment">/* main styles */</span>
+  <span class="hljs-comment">/* footer styles */</span>
+}
+</code></pre>
+<h4 id="-%E5%BC%BA%E5%88%B6-media-query-%E5%A6%82%E6%9E%9C%E6%9C%89%E5%A4%9A%E4%B8%AA%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%97%B6%EF%BC%8C%E5%BA%94%E5%B0%86%E6%AF%8F%E4%B8%AA%E6%9D%A1%E4%BB%B6%E6%94%BE%E5%9C%A8%E5%8D%95%E7%8B%AC%E4%B8%80%E8%A1%8C%E4%B8%AD%E3%80%82">[&#x5F3A;&#x5236;] <code>Media Query</code> &#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x5E94;&#x5C06;&#x6BCF;&#x4E2A;&#x6761;&#x4EF6;&#x653E;&#x5728;&#x5355;&#x72EC;&#x4E00;&#x884C;&#x4E2D;&#x3002;</h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-at_rule">@<span class="hljs-keyword">media</span>
+(-webkit-min-device-pixel-ratio: <span class="hljs-number">2</span>), /* Webkit-based browsers */
+(min--moz-device-pixel-ratio: <span class="hljs-number">2</span>),    /* Older Firefox browsers (prior to Firefox <span class="hljs-number">16</span>) */
+(min-resolution: <span class="hljs-number">2dppx</span>),             /* The standard way */
+(min-resolution: <span class="hljs-number">192dpi</span>) </span>{           <span class="hljs-comment">/* dppx fallback */</span>
+  <span class="hljs-comment">/* Retina-specific stuff here */</span>
+}
+</code></pre>
+<h4 id="-%E5%BB%BA%E8%AE%AE-%E5%B0%BD%E5%8F%AF%E8%83%BD%E7%BB%99%E5%87%BA%E5%9C%A8%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E8%AE%BE%E5%A4%87-retina-%E4%B8%8B%E6%95%88%E6%9E%9C%E6%9B%B4%E4%BD%B3%E7%9A%84%E6%A0%B7%E5%BC%8F%E3%80%82">[&#x5EFA;&#x8BAE;] &#x5C3D;&#x53EF;&#x80FD;&#x7ED9;&#x51FA;&#x5728;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x8BBE;&#x5907; (Retina) &#x4E0B;&#x6548;&#x679C;&#x66F4;&#x4F73;&#x7684;&#x6837;&#x5F0F;&#x3002;</h4>
 
                     
                     </section>
