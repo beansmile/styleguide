@@ -57,3 +57,13 @@
   * [参考文献](ruby-section15/README.md)
 
 * [Rails styleguide](chapter5/README.md)
+  * [配置](rails-section1/README.md)
+  * [路由](rails-section2/README.md)
+  * [控制器](rails-section3/README.md)
+  * [模型](rails-section4/README.md)
+  * [迁移](rails-section5/README.md)
+  * [视图](rails-section6/README.md)
+  * [国际化](rails-section7/README.md)
+  * [Assets](rails-section8/README.md)
+  * [Mailers](rails-section9/README.md)
+  * [Bundler](rails-section10/README.md)
