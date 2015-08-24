@@ -73,9 +73,7 @@ HTML作为应用广泛描述网页结构的超文本标记语言，保持其合�
 
 解释：
 
-不允许 class 只用于让 JavaScript 选择某些元素，class 应该具有明确的语义和样式。否则容易导致 css class 泛滥。
-
-使用 id、属性选择作为 hook 是更好的方式。
+如果需要对DOM元素绑定JS行为，不允许直接使用 `class` 而没有具体的样式定义，这种情况应该使用 `id`
 
 #### [强制] 同一页面，应避免使用相同的 `name` 与 `id`。
 
@@ -110,15 +108,16 @@ IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可
 <P>Hello StyleGuide!</P>
 ```
 
-#### [强制] 对于无需自闭合的标签，不允许自闭合。
+#### [建议] 对于无需自闭合的标签，不允许自闭合。
 
 解释：
+
+XHTML标准要求所有标签必须闭合，HTML5标准对代码要求很宽松，W3C建议单标签无需闭合，注意在reactjs 中必须使用闭合。
 
 常见无需自闭合标签有：input、br、img、hr、meta、link等。
 
 所有无需自闭合标签有：area、base, br, col, command, embed, hr, img, input, 
 keygen, link, meta, param, source, track, wbr 
-
 
 示例：
 
@@ -242,9 +241,7 @@ keygen, link, meta, param, source, track, wbr
 <input type="checkbox" value="1" checked>
 ```
 
-#### [建议] 自定义属性建议以 `xxx-` 为前缀，推荐使用 `data-`。
-
-解释：使用前缀有助于区分自定义属性和标准定义的属性。
+#### [强制] 自定义属性以 `data-` 为前缀。
 
 示例：
 
@@ -478,42 +475,6 @@ button 元素的默认 type 为 submit，如果被置于 form 元素中，点击
 由于浏览器兼容性问题，使用按钮的 name 属性会带来许多难以发现的问题。具体情况可参考[此文](http://w3help.org/zh-cn/causes/CM2001)。
 
 ### 5.3 可访问性
-
-#### [建议] 负责主要功能的按钮在 `DOM` 中的顺序应靠前。
-
-解释：
-
-负责主要功能的按钮应相对靠前，以提高可访问性。如果在 CSS 中指定了 `float: right` 则可能导致视觉上主按钮在前，而 DOM 中主按钮靠后的情况。
-
-示例：
-
-```html
-<!-- good -->
-<style>
-.buttons .button-group {
-  float: right;
-}
-</style>
-
-<div class="buttons">
-  <div class="button-group">
-    <button type="submit">提交</button>
-    <button type="button">取消</button>
-  </div>
-</div>
-
-<!-- bad -->
-<style>
-.buttons button {
-  float: right;
-}
-</style>
-
-<div class="buttons">
-  <button type="button">取消</button>
-  <button type="submit">提交</button>
-</div>
-```
 
 #### [建议] 当使用 `JavaScript` 进行表单提交时，如果条件允许，应使原生提交功能正常工作。
 
