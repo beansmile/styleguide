@@ -62,9 +62,7 @@
 
 解释：
 
-不允许 class 只用于让 JavaScript 选择某些元素，class 应该具有明确的语义和样式。否则容易导致 css class 泛滥。
-
-使用 id、属性选择作为 hook 是更好的方式。
+如果需要对DOM元素绑定JS行为，不允许直接使用 `class` 而没有具体的样式定义，这种情况应该使用 `id`
 
 #### [强制] 同一页面，应避免使用相同的 `name` 与 `id`。
 
@@ -99,9 +97,11 @@ IE 浏览器会混淆元素的 id 和 name 属性， document.getElementById 可
 <P>Hello StyleGuide!</P>
 ```
 
-#### [强制] 对于无需自闭合的标签，不允许自闭合。
+#### [建议] 对于无需自闭合的标签，不允许自闭合。
 
 解释：
+
+XHTML标准要求所有标签必须闭合，HTML5标准对代码要求很宽松，W3C建议单标签无需闭合，注意在reactjs 中必须使用闭合。
 
 常见无需自闭合标签有：input、br、img、hr、meta、link等。
 
@@ -231,9 +231,7 @@ keygen, link, meta, param, source, track, wbr
 <input type="checkbox" value="1" checked>
 ```
 
-#### [建议] 自定义属性建议以 `xxx-` 为前缀，推荐使用 `data-`。
-
-解释：使用前缀有助于区分自定义属性和标准定义的属性。
+#### [强制] 自定义属性以 `data-` 为前缀。
 
 示例：
 

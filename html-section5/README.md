@@ -47,42 +47,6 @@ button 元素的默认 type 为 submit，如果被置于 form 元素中，点击
 
 ### 1.5.3 可访问性
 
-#### [建议] 负责主要功能的按钮在 `DOM` 中的顺序应靠前。
-
-解释：
-
-负责主要功能的按钮应相对靠前，以提高可访问性。如果在 CSS 中指定了 `float: right` 则可能导致视觉上主按钮在前，而 DOM 中主按钮靠后的情况。
-
-示例：
-
-```html
-<!-- good -->
-<style>
-.buttons .button-group {
-  float: right;
-}
-</style>
-
-<div class="buttons">
-  <div class="button-group">
-    <button type="submit">提交</button>
-    <button type="button">取消</button>
-  </div>
-</div>
-
-<!-- bad -->
-<style>
-.buttons button {
-  float: right;
-}
-</style>
-
-<div class="buttons">
-  <button type="button">取消</button>
-  <button type="submit">提交</button>
-</div>
-```
-
 #### [建议] 当使用 `JavaScript` 进行表单提交时，如果条件允许，应使原生提交功能正常工作。
 
 解释：
