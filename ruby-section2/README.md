@@ -125,8 +125,6 @@
     result = some_condition ? something : something_else
     ```
 
-* 不要使用 `if x; ...`。使用三元操作运算代替。
-
 * 利用 `if` and `case` 是表达式这样的事实它们返回一个结果。
 
     ```Ruby
@@ -182,8 +180,6 @@
     end
     ```
 
-* The `and` and `or` keywords are banned. It's just not worth
-  it. Always use `&&` and `||` instead.
 * `and` 和 `or` 这两个关键字被禁止使用了。它名不符实。总是使用 `&&` 和 `||` 来取代。
 
     ```Ruby
@@ -428,11 +424,7 @@
 
     有人会争论多行链式看起来和使用 `{...}` 一样工作，但是他们问问自己 - 这样的代码真的有可读性码并且为什么代码块中的内容不能被提取到美丽的方法中。
 
-* Consider using explicit block argument to avoid writing block
-  literal that just passes its arguments to another block. Beware of
-  the performance impact, though, as the block gets converted to a
-  Proc.
-  考虑使用明确的块参数来避免写入的块字面量仅仅传递参数的给另一个块。小心性能的影响，即使，
+* 考虑使用明确的块参数来避免写入的块字面量仅仅传递参数的给另一个块。小心性能的影响，即使，
   块被转换成了 Proc。
 
     ```Ruby
@@ -472,7 +464,7 @@
     ```
 
 
-* 避免在不需要的地方使用 `self`(它仅仅在调用一些 `self` 做写访问的时候需要)(It is only required when calling a self write accessor.)
+* 避免在不需要的地方使用 `self`(它仅仅在调用一些 `self` 做写访问的时候需要)
 
     ```Ruby
     # bad
@@ -494,7 +486,7 @@
     end
     ```
 
-* 作为一个必然的结果，避免将方法（参数）放于局部变量阴影之下除非它们是相等的。
+* 作为一个必然的结果，避免将方法（参数）放于局部变量之下，除非它们是相等的。
 
     ```Ruby
     class Foo
@@ -505,7 +497,7 @@
         self.options = options
         # both options and self.options are equivalent here
       end
-
+  
       # bad
       def do_something(options = {})
         unless options[:when] == :later
@@ -631,7 +623,7 @@
     $LOAD_PATH.unshift File.dirname(__FILE__)
     ```
 
-* 从来不要在方法名和（参数）开括号之间使用空格。
+* 不要在方法名和（参数）开括号之间使用空格。
 
     ```Ruby
     # bad
@@ -645,7 +637,7 @@
 
 * 通常使用 `-w` 选项运行 Ruby 解释器，在你忘记上面所诉规则，ruby 将会提示你。
 
-* 定义单行块使用新的 lambda 语法。定义多行块中使用 `lambda` 方法。
+* 定义单行块使用新的 `lambda` 语法。定义多行块中使用 `lambda` 方法。
 
     ```Ruby
     # bad
@@ -694,7 +686,8 @@
     l.call(1)
     ```
 
-* 未使用的块参数和局部变量使用 `_`。它也可以接受通过 `_` 来使用（即使它有少了些描述性）。
+
+* (Deprecated)未使用的块参数和局部变量使用 `_`。它也可以接受通过 `_` 来使用（即使它有少了些描述性）。
   这个惯例由 Ruby 解释器以及 RuboCop 这样的工具组织其将会抑制它们的未使用参数警告。
 
     ```Ruby
@@ -723,7 +716,7 @@
     end
     ```
 
-* 使用 `$stdout/$stderr/$stdin` 而不是 `STDOUT/STDERR/STDIN`。`STDOUT/STDERR/STDIN` 是常量，虽然在 Ruby 中是可以给常量重新赋值的（可能是重定向到某个流），但解释器会警告如果你执意这样。
+* (Deprecated)使用 `$stdout/$stderr/$stdin` 而不是 `STDOUT/STDERR/STDIN`。`STDOUT/STDERR/STDIN` 是常量，虽然在 Ruby 中是可以给常量重新赋值的（可能是重定向到某个流），但解释器会警告如果你执意这样。
 
 * 使用 `warn` 而不是 `$stderr.puts`。除了更加清晰简洁，如果你需要的话，
   `warn` 还允许你抑制（suppress）警告（通过 `-W0` 将警告级别设为 0）。
@@ -752,7 +745,6 @@
     ```
 
 * 倾向使用 `Array#join` 而不是相当隐晦的使用字符串作参数的 `Array#*`。
-
 
     ```Ruby
     # bad
@@ -836,7 +828,7 @@
     at_exit { puts 'Goodbye!' }
     ```
 
-* 避免使用 flip-flops 。
+* (Deprecated)避免使用 flip-flops 。
 
 * 避免使用嵌套的条件来控制流程。
   当你可能断言不合法的数据，使用一个防御语句。一个防御语句是一个在函数顶部的条件声明，这样如果数据不合法就能尽快的跳出函数。

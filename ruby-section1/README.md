@@ -4,8 +4,8 @@
 > 把 “自己的除外”拿掉，他们或许是对的...
 > -- Jerry Coffin (on indentation缩进)
 
-* 使用 `UTF-8` 作为源文件编码。
-* 每个缩进级别使用两个 **spaces** （又名软 tabs）. 不要硬 tabs
+* 使用 `UTF-8` 作为源文件编码。 对于已有项目，可以用[magic_encoding](https://github.com/m-ryan/magic_encoding),全局添加`UTF-8`源文件
+* 每个缩进级别使用两个 **spaces** （又名软 tabs）. 不要硬 tabs, sublime用户需强制加上`"tab_size": 2` `"translate_tabs_to_spaces": true` 配置
 
     ```Ruby
     # bad - four spaces
