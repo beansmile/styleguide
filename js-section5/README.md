@@ -1,54 +1,39 @@
-# 函数
+# 数组
 
-- 函数表达式：
-
-  ```javascript
-  // 匿名函数表达式
-  var anonymous = function() {
-    return true;
-  };
-
-  // 命名函数表达式
-  var named = function named() {
-    return true;
-  };
-
-  // 立即调用的函数表达式（IIFE）
-  (function() {
-    console.log('Welcome to the Internet. Please follow me.');
-  })();
-  ```
-
-- 永远不要在一个非函数代码块（if、while 等）中声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但它们的解析表现不一致。
-- **注：** ECMA-262 把 `块` 定义为一组语句。函数声明不是语句。[阅读对 ECMA-262 这个问题的说明](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97)。
+- 使用直接量创建数组。
 
   ```javascript
   // bad
-  if (currentUser) {
-    function test() {
-      console.log('Nope.');
-    }
-  }
+  var items = new Array();
 
   // good
-  var test;
-  if (currentUser) {
-    test = function test() {
-      console.log('Yup.');
-    };
-  }
+  var items = [];
   ```
 
-- 永远不要把参数命名为 `arguments`。这将取代函数作用域内的 `arguments` 对象。
+- 向数组增加元素时使用 Array#push 来替代直接赋值。
+
+  ```
+  var someStack = [];
+
+  // bad
+  someStack[someStack.length] = 'abracadabra';
+
+  // good
+  someStack.push('abracadabra');
+  ```
+
+- 当你需要拷贝数组时，使用 Array#slice。[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
   ```javascript
+  var len = items.length;
+  var itemsCopy = [];
+  var i;
+
   // bad
-  function nope(name, options, arguments) {
-    // ...stuff...
+  for (i = 0; i < len; i++) {
+    itemsCopy[i] = items[i];
   }
 
   // good
-  function yup(name, options, args) {
-    // ...stuff...
-  }
+  itemsCopy = items.slice();
   ```

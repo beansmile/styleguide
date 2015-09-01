@@ -1,47 +1,28 @@
-# 对象
+# 常量
 
-- 使用直接量创建对象。
+- 常量的形式如: NAMES_LIKE_THIS, 即使用大写字符, 并用下划线分隔.
 
-  ```javascript
-  // bad
-  var item = new Object(); // 使用构造函数object
+- 对于基本类型的常量, 只需转换命名.
 
-  // good
-  var item = {};  // 使用对象字面量
   ```
-  注释: 虽然可以使用任何一种方法来定义对象，但开发人员更倾向于对象字面量，因为这种语法要求的代码量少，而且能给人封装数据的感觉
-
-- 不要使用[保留字](http://es5.github.io/#x7.6.1)作为键名，它们在 IE8 下不工作。[更多信息](https://github.com/airbnb/javascript/issues/61)。
-
-  ```javascript
-  // bad
-  var superman = {
-    default: { clark: 'kent' },
-    private: true
-  };
-
-  // good
-  var superman = {
-    defaults: { clark: 'kent' },
-    hidden: true
-  };
+  /**
+   * The number of seconds in a minute.
+   * @type {number}
+   */
+  goog.example.SECONDS_IN_A_MINUTE = 60;
   ```
 
-- 使用同义词替换需要使用的保留字。
+- 对于非基本类型, 使用 @const 标记.
 
-  ```javascript
-  // bad
-  var superman = {
-    class: 'alien'
-  };
-
-  // bad
-  var superman = {
-    klass: 'alien'
-  };
-
-  // good
-  var superman = {
-    type: 'alien'
-  };
+  ```
+  /**
+   * The number of seconds in each of the given units.
+   * @type {Object.<number>}
+   * @const
+   */
+  goog.example.SECONDS_TABLE = {
+    minute: 60,
+    hour: 60 * 60,
+    day: 60 * 60 * 24
+  }
   ```

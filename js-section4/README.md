@@ -1,81 +1,47 @@
-# 字符串
+# 对象
 
-- 使用单引号 `''` 包裹字符串。
+- 使用直接量创建对象。
 
   ```javascript
   // bad
-  var name = "Bob Parr";
+  var item = new Object(); // 使用构造函数object
 
   // good
-  var name = 'Bob Parr';
+  var item = {};  // 使用对象字面量
+  ```
+  注释: 虽然可以使用任何一种方法来定义对象，但开发人员更倾向于对象字面量，因为这种语法要求的代码量少，而且能给人封装数据的感觉
 
+- 不要使用[保留字](http://es5.github.io/#x7.6.1)作为键名，它们在 IE8 下不工作。[更多信息](https://github.com/airbnb/javascript/issues/61)。
+
+  ```javascript
   // bad
-  var fullName = "Bob " + this.lastName;
+  var superman = {
+    default: { clark: 'kent' },
+    private: true
+  };
 
   // good
-  var fullName = 'Bob ' + this.lastName;
+  var superman = {
+    defaults: { clark: 'kent' },
+    hidden: true
+  };
   ```
 
-- 超过 80 个字符的字符串应该使用连接符写成多行。
-- 注：若过渡使用，通过连接符连接的长字符串可能会影响性能。[jsPerf](http://jsperf.com/ya-string-concat) & [讨论](https://github.com/airbnb/javascript/issues/40).
+- 使用同义词替换需要使用的保留字。
 
   ```javascript
   // bad
-  var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+  var superman = {
+    class: 'alien'
+  };
 
   // bad
-  var errorMessage = 'This is a super long error that was thrown because \
-  of Batman. When you stop to think about how Batman had anything to do \
-  with this, you would get nowhere \
-  fast.';
+  var superman = {
+    klass: 'alien'
+  };
 
   // good
-  var errorMessage = 'This is a super long error that was thrown because ' +
-    'of Batman. When you stop to think about how Batman had anything to do ' +
-    'with this, you would get nowhere fast.';
-  ```
-
-- 程序化生成的字符串使用 Array#join 连接而不是使用连接符。尤其是 IE 下：[jsPerf](http://jsperf.com/string-vs-array-concat/2).
-
-  ```javascript
-  var items;
-  var messages;
-  var length;
-  var i;
-
-  messages = [{
-    state: 'success',
-    message: 'This one worked.'
-  }, {
-    state: 'success',
-    message: 'This one worked as well.'
-  }, {
-    state: 'error',
-    message: 'This one did not work.'
-  }];
-
-  length = messages.length;
-
-  // bad
-  function inbox(messages) {
-    items = '<ul>';
-
-    for (i = 0; i < length; i++) {
-      items += '<li>' + messages[i].message + '</li>';
-    }
-
-    return items + '</ul>';
-  }
-
-  // good
-  function inbox(messages) {
-    items = [];
-
-    for (i = 0; i < length; i++) {
-      // use direct assignment in this case because we're micro-optimizing.
-      items[i] = '<li>' + messages[i].message + '</li>';
-    }
-
-    return '<ul>' + items.join('') + '</ul>';
-  }
+  var superman = {
+    type: 'alien'
+  };
   ```

@@ -1,30 +1,17 @@
-# 属性
+# 字符串
 
-- 使用 `.` 来访问对象的属性。
+- 使用单引号 `''` 包裹字符串。
 
   ```javascript
-  var luke = {
-    jedi: true,
-    age: 28
-  };
-
   // bad
-  var isJedi = luke['jedi'];
+  var name = "Bob Parr";
 
   // good
-  var isJedi = luke.jedi;
+  var name = 'Bob Parr';
+
+  // bad
+  var fullName = "Bob " + this.lastName;
+
+  // good
+  var fullName = 'Bob ' + this.lastName;
   ```
-
-- 当通过变量访问属性时使用中括号 `[]`。
-
-  ```javascript
-  var luke = {
-    jedi: true,
-    age: 28
-  };
-
-  function getProp(prop) {
-    return luke[prop];
-  }
-
-  var isJedi = getProp('jedi');

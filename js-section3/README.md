@@ -1,48 +1,25 @@
-# 数组
+# 分号
 
-- 使用直接量创建数组。
+- **总是使用分号.**
 
   ```javascript
   // bad
-  var items = new Array();
+  (function() {
+    var name = 'Skywalker'
+    return name
+  })()
 
   // good
-  var items = [];
+  (function() {
+    var name = 'Skywalker';
+    return name;
+  })();
+
+  // good (防止函数在两个 IIFE 合并时被当成一个参数
+  ;(function() {
+    var name = 'Skywalker';
+    return name;
+  })();
   ```
 
-- 向数组增加元素时使用 Array#push 来替代直接赋值。
-
-  ```
-  var someStack = [];
-
-  // bad
-  someStack[someStack.length] = 'abracadabra';
-
-  // good
-  someStack.push('abracadabra');
-  ```
-
-- 当你需要拷贝数组时，使用 Array#slice。[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
-
-  ```javascript
-  var len = items.length;
-  var itemsCopy = [];
-  var i;
-
-  // bad
-  for (i = 0; i < len; i++) {
-    itemsCopy[i] = items[i];
-  }
-
-  // good
-  itemsCopy = items.slice();
-  ```
-
-- 使用 Array#slice 将类数组对象转换成数组。
-
-  ```javascript
-  function trigger() {
-    var args = Array.prototype.slice.call(arguments);
-    ...
-  }
-  ```
+  [了解更多](http://stackoverflow.com/a/7365214/1712802).

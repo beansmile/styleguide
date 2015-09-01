@@ -1,4 +1,4 @@
-# 空白
+# 缩进
 
 - 使用 2 个空格作为缩进。
 
@@ -77,30 +77,6 @@
 
   // good
   var x = y + 5;
-  ```
-
-- 在文件末尾插入一个空行。
-
-  ```javascript
-  // bad
-  (function(global) {
-    // ...stuff...
-  })(this);
-  ```
-
-  ```javascript
-  // bad
-  (function(global) {
-    // ...stuff...
-  })(this);↵
-  ↵
-  ```
-
-  ```javascript
-  // good
-  (function(global) {
-    // ...stuff...
-  })(this);↵
   ```
 
 - 在使用长方法链时进行缩进。使用前面的点 `.` 强调这是方法调用而不是新语句。
