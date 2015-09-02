@@ -1,7 +1,7 @@
 # 命名
 > The only real difficulties in programming are cache invalidation and
 > naming things. <br/>
-> -- Phil Karlton
+> -- Phil Karlton <br/>
 > 程式设计的真正难题是替事物命名及使缓存失效。<br/>
 > -- Phil Karlton
 
@@ -44,10 +44,7 @@
     end
     ```
 
-* Snake case: punctuation is removed and spaces are replaced by single underscores. Normally the letters share the same case (either UPPER_CASE_EMBEDDED_UNDERSCORE or lower_case_embedded_underscore) but the case can be mixed
-
-* 使用`CamelCase(駝峰式大小寫)`的形式给类和模块命名。(保持使用缩略首字母大写的方式如HTTP,
-  RFC, XML)
+* 使用`CamelCase(驼峰式大小写)`的形式给类和模块命名。(保持使用缩略首字母大写的方式如HTTP, RFC, XML)
 
     ```Ruby
     # bad
